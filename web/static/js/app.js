@@ -19,3 +19,41 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+var $decodedArea = $('.js-encDec__decodedArea');
+var $encodedArea = $('.js-encDec__encodedArea');
+
+var $decodeButton = $('.js-encDec__decodeButton');
+var $encodeButton = $('.js-encDec__encodeButton');
+
+$decodeButton.on('click', function (event) {
+  var srcText = $encodedArea.val();
+  $.post({
+    url: '/url/decode',
+    headers: {
+      'x-csrf-token': $('.js-csrfToken').first().val()
+    },
+    data: {
+      text: srcText
+    },
+  }).then(function (data) {
+    var destText =_.has(data, 'text') ? data.text : '';
+    $decodedArea.val(_.escape(destText));
+  });
+});
+
+$encodeButton.on('click', function (event) {
+  var srcText = $decodedArea.val();
+  $.post({
+    url: '/url/encode',
+    headers: {
+      'x-csrf-token': $('.js-csrfToken').first().val()
+    },
+    data: {
+      text: srcText
+    },
+  }).then(function (data) {
+    var destText =_.has(data, 'text') ? data.text : '';
+    $encodedArea.val(_.escape(destText));
+  });
+});
