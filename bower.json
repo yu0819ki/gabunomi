@@ -1,0 +1,21 @@
+{
+  "name": "gabunomi",
+  "description": "",
+  "main": "",
+  "authors": [
+    "yu0819ki"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0"
+  }
+}
