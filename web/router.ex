@@ -17,6 +17,8 @@ defmodule Gabunomi.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    post "/url/encode", UrlEncDecController, :encode
+    post "/url/decode", UrlEncDecController, :decode
   end
 
   # Other scopes may use custom stacks.
