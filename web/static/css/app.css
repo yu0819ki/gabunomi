@@ -76,3 +76,65 @@ form.link, form.button {
     border-bottom: 0;
   }
 }
+
+/*
+<div class="p-encDec">
+  <div class="p-encDec__leftArea">
+    <textarea name="decoded" class="p-encDec__textarea p-encDec__textarea--decoded js-encDec__decodedArea"></textarea>
+    <button class="p-encDec__button p-encDec__button--encode">encode</button>
+  </div>
+  <div class="p-encDec__rightArea">
+    <textarea name="encoded" class="p-encDec__textarea p-encDec__textarea--encoded js-encDec__encodedArea"></textarea>
+    <button class="p-encDec__button p-encDec__button--decode">decode</button>
+  </div>
+</div>
+*/
+.p-encDec {
+  display: flex;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.p-encDec .p-encDec__leftArea,
+.p-encDec .p-encDec__rightArea {
+  -webkit-flex-grow: 1; /* Safari */
+  flex-grow:         1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.p-encDec .p-encDec__textarea {
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  border: none;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.p-encDec .p-encDec__textarea.p-encDec__textarea--decoded {
+  background-color: #ffcc99;
+}
+.p-encDec .p-encDec__textarea.p-encDec__textarea--encoded {
+  background-color: #ccff99;
+}
+.p-encDec .p-encDec__textarea.p-encDec__textarea--decoded:hover,
+.p-encDec .p-encDec__textarea.p-encDec__textarea--encoded:hover {
+  opacity: 0.7;
+}
+.p-encDec .p-encDec__textarea.p-encDec__textarea--decoded:focus,
+.p-encDec .p-encDec__textarea.p-encDec__textarea--encoded:focus {
+  background-color: #ffffff;
+}
+
+.p-encDec .p-encDec__button {
+  background-color: #66ff00;
+  width: 100%;
+  border: none;
+  border-right: solid 2px #669900;
+  border-bottom: solid 2px #669900;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.p-encDec .p-encDec__button:hover {
+  background-color: #bbff55;
+}
